@@ -1,0 +1,29 @@
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+ <h1> User Details Save</h1>   
+  <style>
+    td, th {
+    	padding: 5px;
+    }
+  	table, th, td {
+  		border: 1px solid black;
+  		border-collapse: collapse;
+	}
+</style>
+
+</head>
+<table>  
+<tr>    
+<td><h4>User ID: </h4></td>    
+<td><h4 th:text="${user.id}"></h4></td>    
+</tr>   
+<tr>    
+<td><h4>Password: </h4></td>    
+<td><h4 th:text="${user.password}"></h4></td>    
+</tr>    
+<tr>    
+<td><h4>Email: </h4></td>    
+<td><h4 th:text="${user.email}"></h4></td>    
+</tr>   
+</table>    
+</html>  

@@ -1,0 +1,58 @@
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+ <h1> Trading page</h1>   
+  <style>
+    td, th {
+    	padding: 5px;
+    }
+  	table, th, td {
+  		border: 1px solid black;
+  		border-collapse: collapse;
+	}
+</style>
+
+
+
+</head>  
+   <table style={border  1px}>
+    <tr><th>TICKER</th>
+        <th>PRICE</th>
+      
+      
+    </tr>
+    <tr th:each="d : ${entries}">
+        <td th:text="${d.ticker}">N/A</td>
+        <td th:text="${d.price}">N/A</td>
+      
+      
+    </tr> 
+</table>    
+
+
+<body>    
+<form action="trading" method="post">
+<td><input  type="hidden" name="id" th:value="${user.id}"></input></td> 
+<h2> StokeTrading </h2>    
+<table>    
+<tr>    
+<td><label for="ticker">Ticker</label></td>    
+<td><input type="text" name="ticker"></input></td>    
+ </tr>  
+ <tr>    
+<td><label for="quantity">Quantity</label></td>    
+<td><input type="number" name="quantity"></input></td>    
+ </tr>      
+<tr>    
+<td></td>    
+<td><input type="submit" value="Submit"></input></td>    
+</tr>    
+</table>    
+
+
+<h2 th:text="${error}"></h2>
+</form>    
+</body> 
+
+
+
+</html>  
